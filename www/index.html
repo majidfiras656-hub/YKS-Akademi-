@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101827"><title>YKS Akademi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar"><div><div class="eyebrow">HEDEFİNİ PLANLA</div><h1>YKS Akademi <span>✦</span></h1></div><div class="avatar" id="avatar">Y</div></header>
+<main>
+<section class="welcome card"><div class="welcome-copy"><p class="muted">MERHABA, <span id="helloName">ÖĞRENCİ</span> 👋</p><h2>Bugün küçük bir adım,<br><em>yarın büyük bir başarı.</em></h2><p class="muted">Planına sadık kal, gelişimini takip et.</p></div><div class="progress-ring" id="ring"><strong id="percent">0%</strong><small>bugün</small></div></section>
+<nav class="tabs"><button class="tab active" data-tab="home">Genel Bakış</button><button class="tab" data-tab="plan">Çalışma Planı</button><button class="tab" data-tab="timer">Odak</button><button class="tab" data-tab="exam">Denemeler</button></nav>
+<section id="home" class="view active">
+<div class="section-head"><div><p class="eyebrow">GÜNLÜK HEDEF</p><h2>Bugünkü programın</h2></div><span class="date-pill" id="today"></span></div>
+<div class="stats"><div class="stat card"><span>Görevler</span><b id="taskCount">0/0</b><small>Tamamlandı</small></div><div class="stat card"><span>Çalışma serisi</span><b id="streak">0 gün</b><small>Her gün ilerle</small></div><div class="stat card"><span>Deneme</span><b id="examCount">0</b><small>Kaydedilen</small></div></div>
+<div class="card task-card"><div class="card-title"><h3>Bugünün görevleri</h3><button class="text-btn" id="addTask">+ Görev ekle</button></div><div id="tasks"></div></div>
+<div class="card quote"><span>✦</span><div><b>Unutma</b><p>İstikrar, motivasyonun olmadığı günlerde de devam edebilmektir.</p></div></div>
+</section>
+<section id="plan" class="view">
+<div class="section-head"><div><p class="eyebrow">YOL HARİTAN</p><h2>Çalışma planı</h2></div></div>
+<div class="phase-grid"><div class="phase card"><span class="phase-dot tyt"></span><b>TYT dönemi</b><small>Temel konular ve hız</small></div><div class="phase card"><span class="phase-dot ayt"></span><b>AYT dönemi</b><small>Alan dersleri ve derinleşme</small></div></div>
+<div class="card"><div class="card-title"><h3>Haftalık görünüm</h3><small class="muted">Görevlerini işaretleyebilirsin</small></div><div id="weekPlan"></div></div>
+<p class="hint">Planını kendi okul ve kurs programına göre düzenleyebilirsin. Görevler bu telefonda saklanır.</p>
+</section>
+<section id="timer" class="view">
+<div class="section-head"><div><p class="eyebrow">DERİN ODAK</p><h2>Zamanını yönet</h2></div></div>
+<div class="timer-card card"><div class="timer-mode" id="timerMode">ODAK ZAMANI</div><div class="clock" id="clock">90:00</div><p class="muted" id="timerCaption">Dikkatini tek bir hedefe ver.</p><div class="timer-actions"><button class="primary" id="timerStart">Başlat</button><button class="secondary" id="timerReset">Sıfırla</button></div><div class="timer-switch"><button class="selected" data-min="90">90 dk odak</button><button data-min="15">15 dk mola</button></div></div>
+</section>
+<section id="exam" class="view">
+<div class="section-head"><div><p class="eyebrow">GELİŞİMİNİ ÖLÇ</p><h2>Deneme takibi</h2></div></div>
+<div class="card form-card"><h3>Yeni deneme ekle</h3><div class="form-grid"><label>Sınav türü<select id="examType"><option>TYT</option><option>AYT</option></select></label><label>Tarih<input id="examDate" type="date"></label><label>Türkçe net<input id="turkce" type="number" step=".25" placeholder="0"></label><label>Matematik net<input id="mat" type="number" step=".25" placeholder="0"></label><label>Sosyal net<input id="sosyal" type="number" step=".25" placeholder="0"></label><label>Fen net<input id="fen" type="number" step=".25" placeholder="0"></label></div><label>Yanlışlarının temel nedeni<textarea id="reason" placeholder="Örn. süre yönetimi, bilgi eksiği, dikkatsizlik..."></textarea></label><button class="primary full" id="saveExam">Denemeyi kaydet</button></div>
+<div class="card"><div class="card-title"><h3>Son denemelerin</h3><span class="muted" id="examTotal">0 kayıt</span></div><div id="examList" class="exam-list"><p class="empty">Henüz deneme eklemedin.</p></div></div>
+</section>
+</main>
+<footer>YKS AKADEMİ <span>•</span> HEDEFİNE HER GÜN BİR ADIM</footer>
+</div>
+<dialog id="nameDialog"><form method="dialog" class="dialog-card"><div class="eyebrow">KİŞİSELLEŞTİR</div><h2>Önce seni tanıyalım</h2><p class="muted">Sana nasıl hitap edelim?</p><input id="nameInput" maxlength="24" placeholder="Adın" required><button class="primary full" id="saveName">Başlayalım</button></form></dialog>
+<script src="app.js"></script>
+</body></html>
